@@ -56,6 +56,8 @@ def get_selected_items_list(items, A=8):
             res -= value[i-1]
             A -= area[i-1]       
     print(items_list)
+    total_val = CURR_VAL - sum(value) + sum(val[1] for val in items_list)*2
+    print(f'Итоговые очки выживания: {total_val}')
     return items_list
 
 def backpack_show(items):
@@ -68,6 +70,7 @@ def backpack_show(items):
             C[i] = C[i] + C[i+1]
             del C[i+1]       
     for i in range(len(C)):
-        print(C[i])                
+        print(C[i])
+                    
 
 backpack_show(ITEMS)
